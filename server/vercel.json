@@ -1,4 +1,7 @@
 {
+  "buildCommand": "pnpm build",       // Uses the build script in package.json
+  "outputDirectory": "dist",          // Matches your tsup output
+  "cleanUrls": true,
   "version": 2,
   "builds": [
     {

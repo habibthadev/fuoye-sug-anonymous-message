@@ -5,7 +5,7 @@
   "main": "dist/app.js",
   "scripts": {
     "dev": "nodemon -r tsconfig-paths/register src/app.ts",
-    "build": "tsc",
+    "build": "tsc && tsc-alias",
     "start": "node dist/app.js",
     "test": "vitest",
     "test:coverage": "vitest --coverage",
@@ -50,6 +50,7 @@
     "nodemon": "^3.1.10",
     "supertest": "^6.3.3",
     "ts-node": "^10.9.2",
+    "tsc-alias": "^1.8.16",
     "tsx": "^4.6.2",
     "typescript": "^5.3.3",
     "vitest": "^1.1.0"
