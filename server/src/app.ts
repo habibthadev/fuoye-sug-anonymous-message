@@ -1,4 +1,4 @@
-import express from "express"
+import express, { Express } from "express"
 import cors from "cors"
 import helmet from "helmet"
 import mongoSanitize from "express-mongo-sanitize"
@@ -30,7 +30,7 @@ for (const envVar of requiredEnvVars) {
   }
 }
 
-const app = express()
+const app: Express = express()
 const PORT = process.env.PORT || 5000
 
 // Connect to database
