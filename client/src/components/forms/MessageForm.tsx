@@ -80,7 +80,7 @@ export const MessageForm: React.FC = () => {
         </CardHeader>
 
         <CardContent>
-          <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+          <form onSubmit={handleSubmit(onSubmit)} className="space-y-2 md:space-y-6">
             <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
               <TabsList className="grid w-full grid-cols-2 mb-6">
                 <TabsTrigger value="write" className="flex items-center gap-2">
@@ -93,13 +93,13 @@ export const MessageForm: React.FC = () => {
                 </TabsTrigger>
               </TabsList>
 
-              <TabsContent value="write" className="space-y-4">
+              <TabsContent value="write" className="space-y-2 md:space-y-4">
                 <div className="space-y-2">
                   <Textarea
                     {...register("content")}
                     placeholder="Share your thoughts, feedback, or concerns here... You can use markdown formatting for better presentation."
                     className={cn(
-                      "min-h-[300px] resize-none text-base leading-relaxed",
+                      "min-h-[300px] resize-none border text-base leading-relaxed",
                       "focus:ring-2 focus:ring-primary focus:border-transparent",
                       "transition-all duration-200",
                       errors.content && "border-red-500 focus:ring-red-500",
@@ -141,7 +141,7 @@ export const MessageForm: React.FC = () => {
                 </div>
               </TabsContent>
 
-              <TabsContent value="preview" className="space-y-4">
+              <TabsContent value="preview" className="space-y-2 md:space-y-4">
                 <div className="min-h-[300px] p-6 border rounded-lg bg-muted/30">
                   {content.trim() ? (
                     <MarkdownPreview content={content} />
@@ -178,7 +178,7 @@ export const MessageForm: React.FC = () => {
                 ) : (
                   <div className="flex items-center gap-2">
                     <Send className="h-5 w-5" />
-                    Submit Anonymous Message
+                    Send Message
                   </div>
                 )}
               </Button>

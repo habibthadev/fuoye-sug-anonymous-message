@@ -19,11 +19,11 @@ export const Header: React.FC = () => {
       <div className="container flex h-16 items-center justify-between">
         {/* Logo */}
         <Link to="/" className="flex items-center space-x-3 hover:opacity-80 transition-opacity">
-          <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary text-primary-foreground font-bold text-lg">
-            SU
-          </div>
+          <div className="flex h-10 w-10 items-center justify-center rounded-full">
+              <img src="/images/sugo-logo.jpg" alt="FUOYESUG logo" load="lazy" className="w-full h-full rounded-full" />
+              </div>
           <div className="hidden sm:block">
-            <h1 className="text-xl font-bold text-foreground">Student Union</h1>
+            <h1 className="text-xl font-bold text-foreground">FUOYE Student Union</h1>
             <p className="text-xs text-muted-foreground">Anonymous Messaging</p>
           </div>
         </Link>

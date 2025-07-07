@@ -62,9 +62,9 @@ export const HomePage: React.FC = () => {
           <div className="mx-auto max-w-4xl text-center">
             <div className="animate-in mb-8">
               <div className="flex justify-center mb-6">
-                <div className="flex h-20 w-20 items-center justify-center rounded-full bg-primary text-primary-foreground text-2xl font-bold shadow-lg animate-pulse-green">
-                  SU
-                </div>
+                <div className="flex h-20 w-20 items-center justify-center rounded-full">
+                  <img src="/images/sugo-logo.jpg" alt="FUOYESUG logo" load="lazy" className="w-full h-full rounded-full">
+              </div>
               </div>
               <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-6xl lg:text-7xl">
                 Your Voice, <span className="text-gradient">Anonymously</span>
@@ -73,7 +73,7 @@ export const HomePage: React.FC = () => {
 
             <div className="animate-in mb-8" style={{ animationDelay: "200ms" }}>
               <p className="text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto">
-                Share your thoughts, feedback, and concerns with the Student Union Government through our secure
+                Share your thoughts, feedback, and concerns with the FUOYE Student Union Government through our secure
                 anonymous messaging platform.
               </p>
             </div>
@@ -114,7 +114,7 @@ export const HomePage: React.FC = () => {
         <div className="container">
           <div className="mx-auto max-w-2xl text-center mb-16">
             <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl mb-4">
-              Why Choose Our Platform?
+              Why Choose This Platform?
             </h2>
             <p className="text-lg text-muted-foreground">Built with privacy, security, and user experience in mind.</p>
           </div>
