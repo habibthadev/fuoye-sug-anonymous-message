@@ -1,6 +1,6 @@
 import type { Request, Response, NextFunction } from "express"
-import analyticsService from "@/services/analyticsService"
-import type { AuthenticatedRequest } from "@/types"
+import analyticsService from "../services/analyticsService"
+import type { AuthenticatedRequest } from "../types"
 
 export const getAnalytics = async (req: AuthenticatedRequest, res: Response, next: NextFunction): Promise<void> => {
   try {

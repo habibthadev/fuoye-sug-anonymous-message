@@ -1,8 +1,8 @@
 import type { Request, Response, NextFunction } from "express"
-import Admin from "@/models/Admin"
-import { generateToken } from "@/utils/jwt"
-import analyticsService from "@/services/analyticsService"
-import logger from "@/config/logger"
+import Admin from "../models/Admin"
+import { generateToken } from "../utils/jwt"
+import analyticsService from "../services/analyticsService"
+import logger from "../config/logger"
 
 const MAX_LOGIN_ATTEMPTS = 5
 const LOCK_TIME = 2 * 60 * 60 * 1000 // 2 hours

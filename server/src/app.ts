@@ -1,4 +1,3 @@
-import "./path"
 import express, { Express } from "express"
 import cors from "cors"
 import helmet from "helmet"
@@ -6,17 +5,17 @@ import mongoSanitize from "express-mongo-sanitize"
 import dotenv from "dotenv"
 
 // Import configurations
-import connectDB from "@/config/database"
-import logger from "@/config/logger"
+import connectDB from "./config/database"
+import logger from "./config/logger"
 
 // Import middleware
-import { generalLimiter } from "@/middleware/rateLimiter"
-import { errorHandler, notFoundHandler } from "@/middleware/errorHandler"
+import { generalLimiter } from "./middleware/rateLimiter"
+import { errorHandler, notFoundHandler } from "./middleware/errorHandler"
 
 // Import routes
-import messageRoutes from "@/routes/messages"
-import authRoutes from "@/routes/auth"
-import analyticsRoutes from "@/routes/analytics"
+import messageRoutes from "./routes/messages"
+import authRoutes from "./routes/auth"
+import analyticsRoutes from "./routes/analytics"
 
 // Load environment variables
 dotenv.config()

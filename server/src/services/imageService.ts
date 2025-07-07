@@ -1,6 +1,6 @@
 import puppeteer from "puppeteer"
 import { marked } from "marked"
-import logger from "@/config/logger"
+import logger from "../config/logger"
 
 class ImageService {
   async generateMessageImage(content: string, messageId: string): Promise<Buffer> {

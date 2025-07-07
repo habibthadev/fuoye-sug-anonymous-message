@@ -1,7 +1,7 @@
 import type { Response, NextFunction } from "express"
-import { verifyToken } from "@/utils/jwt"
-import type { AuthenticatedRequest } from "@/types"
-import logger from "@/config/logger"
+import { verifyToken } from "../utils/jwt"
+import type { AuthenticatedRequest } from "../types"
+import logger from "../config/logger"
 
 export const authenticateAdmin = async (
   req: AuthenticatedRequest,

@@ -1,7 +1,7 @@
 import { Router } from "express"
 import type { Router as ExpressRouter } from "express"
-import { getAnalytics, trackPageView, trackUniqueVisitor } from "@/controllers/analyticsController"
-import { authenticateAdmin } from "@/middleware/auth"
+import { getAnalytics, trackPageView, trackUniqueVisitor } from "../controllers/analyticsController"
+import { authenticateAdmin } from "../middleware/auth"
 
 const router: ExpressRouter = Router()
 

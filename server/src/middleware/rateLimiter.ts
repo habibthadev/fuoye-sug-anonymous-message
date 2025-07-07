@@ -1,5 +1,5 @@
 import rateLimit from "express-rate-limit"
-import logger from "@/config/logger"
+import logger from "../config/logger"
 
 // General API rate limiter
 export const generalLimiter = rateLimit({

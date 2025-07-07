@@ -8,11 +8,11 @@ import {
   deleteMessage,
   downloadMessageAsImage,
   getMessageStats,
-} from "@/controllers/messageController"
-import { authenticateAdmin } from "@/middleware/auth"
-import { validateRequest } from "@/middleware/validation"
-import { messageSubmissionLimiter } from "@/middleware/rateLimiter"
-import { messageSchema, adminUpdateMessageSchema } from "@/utils/validation"
+} from "../controllers/messageController"
+import { authenticateAdmin } from "../middleware/auth"
+import { validateRequest } from "../middleware/validation"
+import { messageSubmissionLimiter } from "../middleware/rateLimiter"
+import { messageSchema, adminUpdateMessageSchema } from "../utils/validation"
 
 const router: ExpressRouter = Router()
 

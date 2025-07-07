@@ -1,11 +1,11 @@
 import type { Request, Response, NextFunction } from "express"
-import Message from "@/models/Message"
-import { sanitizeMarkdown } from "@/utils/sanitizer"
-import emailService from "@/services/emailService"
-import analyticsService from "@/services/analyticsService"
-import imageService from "@/services/imageService"
-import logger from "@/config/logger"
-import type { AuthenticatedRequest } from "@/types"
+import Message from "../models/Message"
+import { sanitizeMarkdown } from "../utils/sanitizer"
+import emailService from "../services/emailService"
+import analyticsService from "../services/analyticsService"
+import imageService from "../services/imageService"
+import logger from "../config/logger"
+import type { AuthenticatedRequest } from "../types"
 
 export const submitMessage = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
   try {

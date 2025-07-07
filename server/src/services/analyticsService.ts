@@ -1,5 +1,5 @@
-import Analytics from "@/models/Analytics"
-import logger from "@/config/logger"
+import Analytics from "../models/Analytics"
+import logger from "../config/logger"
 
 class AnalyticsService {
   async trackPageView(date: Date = new Date()): Promise<void> {
