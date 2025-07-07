@@ -11,7 +11,7 @@ export const Footer: React.FC = () => {
           <div className="flex flex-col items-center gap-2 md:items-start">
             <div className="flex items-center space-x-2">
               <div className="flex h-8 w-8 items-center justify-center rounded-full">
-                <img src="/images/sugo-logo.jpg" alt="FUOYESUG logo" load="lazy" className="w-full h-full rounded-full" />
+                <img src="/images/sugo-logo.jpg" alt="FUOYESUG logo" className="w-full h-full rounded-full" />
               </div>
               <span className="font-semibold">FUOYE Student Union</span>
             </div>

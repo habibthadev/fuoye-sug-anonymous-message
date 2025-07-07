@@ -63,7 +63,7 @@ export const HomePage: React.FC = () => {
             <div className="animate-in mb-8">
               <div className="flex justify-center mb-6">
                 <div className="flex h-20 w-20 items-center justify-center rounded-full">
-                  <img src="/images/sugo-logo.jpg" alt="FUOYESUG logo" load="lazy" className="w-full h-full rounded-full" />
+                  <img src="/images/sugo-logo.jpg" alt="FUOYESUG logo" className="w-full h-full rounded-full" />
               </div>
               </div>
               <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-6xl lg:text-7xl">
