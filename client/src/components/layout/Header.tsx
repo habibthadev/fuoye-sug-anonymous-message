@@ -20,7 +20,7 @@ export const Header: React.FC = () => {
         {/* Logo */}
         <Link to="/" className="flex items-center space-x-3 hover:opacity-80 transition-opacity">
           <div className="flex h-10 w-10 items-center justify-center rounded-full">
-              <img src="/images/sugo-logo.jpg" alt="FUOYESUG logo" className="w-full h-full rounded-full" />
+              <img src="/images/sug-logo.jpg" alt="FUOYESUG logo" className="w-full h-full rounded-full" />
               </div>
           <div className="hidden sm:block">
             <h1 className="text-xl font-bold text-foreground">FUOYE Student Union</h1>
