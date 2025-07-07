@@ -24,14 +24,14 @@ export const Footer: React.FC = () => {
           <div className="flex items-center gap-4">
             <div className="text-center mx-0 text-sm text-muted-foreground">
               Made with
-              <Heart className="inline h-4 w-4 text-red-500 fill-current" />
+              <Heart className="inline px-2 h-4 w-4 text-red-500 fill-current" />
               for students by             <a
               href="https://github.com/habibthadev"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
             >
-              <Github className="h-4 w-4" /> habibthadev
+              <Github className="inline px-2 h-4 w-4" /> habibthadev
             </a>
             </div>
           </div>

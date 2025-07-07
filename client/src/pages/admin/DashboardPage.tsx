@@ -154,7 +154,7 @@ export const DashboardPage: React.FC = () => {
             </TabsTrigger>
           </TabsList>
 
-          <TabsContent value="messages" className="space-y-6">
+          <TabsContent value="messages" className="space-y-2 md:space-y-6">
             <Card>
               <CardHeader>
                 <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">

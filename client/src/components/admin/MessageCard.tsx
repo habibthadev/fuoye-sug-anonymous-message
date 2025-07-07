@@ -99,7 +99,7 @@ export const MessageCard: React.FC<MessageCardProps> = ({ message, onUpdate, onD
     >
       <CardHeader className="pb-3">
         <div className="flex items-start justify-start flex-col md:justify-between md:flex-row gap-4">
-          <div className="flex items-center gap-3">
+          <div className="flex justify-start items-start flex-col md:items-center md:flex-row gap-3">
             <div
               className={cn(
                 "flex h-10 w-10 items-center justify-center rounded-full shrink-0",
