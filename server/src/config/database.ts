@@ -1,41 +1,60 @@
-import mongoose from "mongoose"
-import logger from "./logger"
+import mongoose from "mongoose";
+import logger from "./logger";
 
-const connectDB = async (): Promise<void> => {
+let cachedConnection: mongoose.Connection | null = null;
+
+const connectDB = async (): Promise<mongoose.Connection> => {
+  if (cachedConnection) {
+    logger.debug("Using cached MongoDB connection");
+    return cachedConnection;
+  }
+
   try {
-    const mongoURI = process.env.MONGODB_URI
-
+    const mongoURI = process.env.MONGODB_URI;
     if (!mongoURI) {
-      throw new Error("MONGODB_URI is not defined in environment variables")
+      throw new Error("MONGODB_URI is not defined in environment variables");
     }
 
-    const conn = await mongoose.connect(mongoURI, {
+    const options: mongoose.ConnectOptions = {
       maxPoolSize: 10,
-      serverSelectionTimeoutMS: 5000,
-      socketTimeoutMS: 45000,
-    })
+      minPoolSize: 2,
+      serverSelectionTimeoutMS: 3000,
+      socketTimeoutMS: 30000,
+      connectTimeoutMS: 3000,
+      waitQueueTimeoutMS: 5000,
+      retryWrites: true,
+      retryReads: true,
+    };
 
-    logger.info(`MongoDB Connected: ${conn.connection.host}`)
+    await mongoose.connect(mongoURI, options);
 
-    // Handle connection events
-    mongoose.connection.on("error", (err) => {
-      logger.error("MongoDB connection error:", err)
-    })
+    cachedConnection = mongoose.connection;
 
-    mongoose.connection.on("disconnected", () => {
-      logger.warn("MongoDB disconnected")
-    })
+    logger.info(`MongoDB Connected: ${cachedConnection.host}`);
 
-    // Graceful shutdown
+    cachedConnection.on("error", (err) => {
+      logger.error("MongoDB connection error:", err);
+      cachedConnection = null;
+    });
+
+    cachedConnection.on("disconnected", () => {
+      logger.warn("MongoDB disconnected");
+      cachedConnection = null;
+    });
+
     process.on("SIGINT", async () => {
-      await mongoose.connection.close()
-      logger.info("MongoDB connection closed through app termination")
-      process.exit(0)
-    })
-  } catch (error) {
-    logger.error("Database connection failed:", error)
-    process.exit(1)
-  }
-}
+      if (cachedConnection) {
+        await cachedConnection.close();
+        logger.info("MongoDB connection closed through app termination");
+      }
+      process.exit(0);
+    });
 
-export default connectDB
+    return cachedConnection;
+  } catch (error) {
+    logger.error("Database connection failed:", error);
+    throw error;
+  }
+};
+
+export default connectDB;
