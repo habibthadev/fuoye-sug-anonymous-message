@@ -1,4 +1,4 @@
-import "tsconfig-paths/register"
+import "./path"
 import express, { Express } from "express"
 import cors from "cors"
 import helmet from "helmet"
