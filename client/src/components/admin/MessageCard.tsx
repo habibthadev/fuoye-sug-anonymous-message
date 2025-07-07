@@ -98,17 +98,17 @@ export const MessageCard: React.FC<MessageCardProps> = ({ message, onUpdate, onD
       )}
     >
       <CardHeader className="pb-3">
-        <div className="flex items-start justify-between gap-4">
+        <div className="flex items-start justify-start flex-col md:justify-between md:flex-row gap-4">
           <div className="flex items-center gap-3">
             <div
               className={cn(
-                "flex h-10 w-10 items-center justify-center rounded-full",
+                "flex h-10 w-10 items-center justify-center rounded-full shrink-0",
                 message.isReviewed
                   ? "bg-green-100 text-green-600 dark:bg-green-900/30 dark:text-green-400"
                   : "bg-yellow-100 text-yellow-600 dark:bg-yellow-900/30 dark:text-yellow-400",
               )}
             >
-              <MessageSquare className="h-5 w-5" />
+              <MessageSquare className="h-5 w-5 shrink-0" />
             </div>
 
             <div>
@@ -138,7 +138,7 @@ export const MessageCard: React.FC<MessageCardProps> = ({ message, onUpdate, onD
 
               <div className="flex items-center gap-4 mt-1 text-sm text-muted-foreground">
                 <div className="flex items-center gap-1">
-                  <Calendar className="h-3 w-3" />
+                  <Calendar className="h-3 w-3 shrink-0" />
                   <span title={formatDate(message.createdAt)}>{formatRelativeTime(message.createdAt)}</span>
                 </div>
                 <span>{message.messageLength} characters</span>

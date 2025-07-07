@@ -202,7 +202,7 @@ export const DashboardPage: React.FC = () => {
                     ))}
                   </div>
                 ) : filteredMessages.length > 0 ? (
-                  <div className="space-y-6">
+                  <div className="space-y-2 md:space-y-6">
                     {filteredMessages.map((message) => (
                       <MessageCard
                         key={message.id}
