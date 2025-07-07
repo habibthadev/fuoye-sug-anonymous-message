@@ -1,3 +1,4 @@
+/*
 import pino from "pino"
 
 const logger = pino({
@@ -13,6 +14,21 @@ const logger = pino({
           },
         }
       : undefined,
+  formatters: {
+    level: (label) => {
+      return { level: label }
+    },
+  },
+  timestamp: pino.stdTimeFunctions.isoTime,
+})
+
+export default logger
+*/
+
+import pino from "pino"
+
+const logger = pino({
+  level: "debug",
   formatters: {
     level: (label) => {
       return { level: label }
