@@ -9,6 +9,7 @@ import { HomePage } from "@/pages/HomePage"
 import { MessagePage } from "@/pages/MessagePage"
 import { LoginPage } from "@/pages/admin/LoginPage"
 import { DashboardPage } from "@/pages/admin/DashboardPage"
+import { NotFoundPage } from "@/pages/NotFoundPage"
 import { useThemeStore } from "@/stores/themeStore"
 import { useAuthStore } from "@/stores/authStore"
 
@@ -59,6 +60,8 @@ function App() {
                   </ProtectedRoute>
                 }
               />
+              {/* Catch all unmatched routes */}
+              <Route path="*" element={<NotFoundPage />} />
             </Routes>
           </main>
 
