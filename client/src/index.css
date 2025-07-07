@@ -1,7 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Interdisplay=swap");
+@import url("https://fonts.googleapis.com/css2?family=Geist&display=swap");
 
 * {
-  font-family: "Inter", sans-serif;
+  font-family: "Geist", sans-serif;
 }
 
 @tailwind base;
