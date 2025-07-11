@@ -33,7 +33,7 @@ export const MessagePreviewModal: React.FC<MessagePreviewModalProps> = ({ messag
         left: -9999px;
         width: 800px;
         padding: 40px;
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        background: linear-gradient(135deg, #28a745, #20c997);
         font-family: 'Inter', sans-serif;
         z-index: -1;
       `
@@ -58,26 +58,24 @@ export const MessagePreviewModal: React.FC<MessagePreviewModalProps> = ({ messag
         border-bottom: 2px solid #f8f9fa;
       `
 
-      const logo = document.createElement("div")
+      const logo = document.createElement("img")
       logo.style.cssText = `
-        width: 60px;
-        height: 60px;
-        background: linear-gradient(135deg, #28a745, #20c997);
-        border-radius: 15px;
+        width: 80px;
+        height: 80px;
+        border-radius: 100%;
         display: flex;
         align-items: center;
         justify-content: center;
         margin-right: 20px;
-        font-size: 24px;
-        font-weight: bold;
-        color: white;
       `
-      logo.textContent = "SU"
+      // logo.textContent = "SU"
+      logo.src = "/images/sug-logo.jpg"
+      logo.alt = "FUOYESUG Logo"
 
       const headerText = document.createElement("div")
       headerText.innerHTML = `
         <div style="font-size: 24px; font-weight: 700; color: #2d3748; margin-bottom: 5px;">Anonymous Message</div>
-        <div style="font-size: 16px; color: #718096; font-weight: 500;">Student Union Government</div>
+        <div style="font-size: 16px; color: #718096; font-weight: 500;">FUOYE Student Union Government</div>
       `
 
       header.appendChild(logo)
