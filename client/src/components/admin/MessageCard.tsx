@@ -90,8 +90,8 @@ export const MessageCard: React.FC<MessageCardProps> = ({ message, onUpdate, onD
         )}
       >
         <CardHeader className="pb-3">
-          <div className="flex items-start justify-between gap-4">
-            <div className="flex items-center gap-3">
+          <div className="flex items-start justify-start flex-col md:flex-row md:justify-between gap-4">
+            <div className="flex flex-col md:flex-row md:items-center gap-3">
               <div
                 className={cn(
                   "flex h-10 w-10 items-center justify-center rounded-full",
