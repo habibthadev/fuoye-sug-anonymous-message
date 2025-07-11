@@ -16,7 +16,7 @@ export const Footer: React.FC = () => {
               <span className="font-semibold">FUOYE Student Union</span>
             </div>
             <p className="text-sm text-muted-foreground text-center md:text-left">
-              © {currentYear} 2025 FUOYE Students' Union Government (The Better Days Cabinet).
+              © {currentYear} FUOYE Students' Union Government (The Better Days Cabinet).
               <br />
               Adio Led Administration
             </p>
@@ -28,7 +28,7 @@ export const Footer: React.FC = () => {
               href="https://github.com/habibthadev"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
+              className="inline items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors underline"
             >
               <Github className="inline h-4 w-4" /> habibthadev
             </a>
