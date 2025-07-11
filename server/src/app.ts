@@ -55,7 +55,7 @@ app.use(
 // CORS configuration
 app.use(
   cors({
-    origin: "https://fuoye-sug-anon.vercel.app",
+   origin: "https://fuoye-sug-anon.vercel.app",
     credentials: true,
     methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"],
