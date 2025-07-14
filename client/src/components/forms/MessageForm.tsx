@@ -119,13 +119,6 @@ export const MessageForm: React.FC = () => {
                     <span className="text-muted-foreground">
                       Character count: {characterCount.toLocaleString()} / 5,000
                     </span>
-                    <span
-                      className={cn(
-                        "font-medium",
-                         characterCount > 4500 ? "text-yellow-500": characterCount ? "text-red-500" : "text-green-500" )}
-                    >
-                      {characterCount > 4500 ? "Almost at limit": characterCount > 5000 ? "Exceeded the limit" : "Good length"}
-                    </span>
                   </div>
 
                   <Progress
