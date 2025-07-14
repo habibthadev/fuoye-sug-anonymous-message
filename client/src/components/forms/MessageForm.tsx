@@ -17,7 +17,6 @@ import { cn } from "@/lib/utils"
 const messageSchema = z.object({
   content: z
     .string()
-    .min(10, "Message must be at least 10 characters long")
     .max(5000, "Message cannot exceed 5000 characters")
     .trim(),
 })
@@ -123,14 +122,9 @@ export const MessageForm: React.FC = () => {
                     <span
                       className={cn(
                         "font-medium",
-                        characterCount < 10
-                          ? "text-red-500"
-                          : characterCount > 4500
-                            ? "text-yellow-500"
-                            : "text-green-500",
-                      )}
+                         characterCount > 4500 ? "text-yellow-500": characterCount ? "text-red-500" : "text-green-500" )}
                     >
-                      {characterCount < 10 ? "Too short" : characterCount > 4500 ? "Almost at limit" : "Good length"}
+                      {characterCount > 4500 ? "Almost at limit": characterCount > 5000 ? "Exceeded the limit" : "Good length"}
                     </span>
                   </div>
 
@@ -160,7 +154,7 @@ export const MessageForm: React.FC = () => {
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <Button
                 type="submit"
-                disabled={!isValid || isSubmitting || characterCount < 10}
+                disabled={!isValid || isSubmitting}
                 className={cn(
                   "flex-1 h-12 text-base font-medium",
                   "bg-gradient-to-r from-primary to-primary/80",
