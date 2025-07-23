@@ -46,7 +46,7 @@ class EmailService {
     const html = `
       <div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; background-color: #f8f9fa;">
         <div style="background-color: white; padding: 30px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
-          <h2 style="color: #2d5a27; margin-bottom: 20px; text-align: center;">📩 New Anonymous Message</h2>
+          <h2 style="color: #2d5a27; margin-bottom: 20px; text-align: center;">New Anonymous Message</h2>
           
           <div style="background-color: #f8f9fa; padding: 20px; border-radius: 8px; border-left: 4px solid #28a745; margin: 20px 0;">
             <p style="color: #495057; line-height: 1.6; margin: 0;">
@@ -65,7 +65,7 @@ class EmailService {
           
           <p style="color: #6c757d; font-size: 12px; text-align: center; margin: 0;">
             This is an automated notification from the Anonymous Messaging System<br>
-            Student Union - ${new Date().getFullYear()}
+            FUOYE Student Union - ${new Date().getFullYear()}
           </p>
         </div>
       </div>
