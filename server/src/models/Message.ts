@@ -16,7 +16,6 @@ const MessageSchema = new Schema<IMessage>(
       type: String,
       required: [true, "Message content is required"],
       trim: true,
-      minlength: [10, "Message must be at least 10 characters long"],
       maxlength: [5000, "Message cannot exceed 5000 characters"],
     },
     sanitizedContent: {
