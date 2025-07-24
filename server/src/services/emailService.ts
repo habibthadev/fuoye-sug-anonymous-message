@@ -1,21 +1,22 @@
 import nodemailer from "nodemailer"
 import logger from "../config/logger"
 import type { EmailOptions } from "../types"
+import dotenv from "dotenv" 
+
+dotenv.config();
 
 class EmailService {
   private transporter: nodemailer.Transporter
 
   constructor() {
     this.transporter = nodemailer.createTransport({
-      host: process.env.SMTP_HOST,
-      port: Number.parseInt(process.env.SMTP_PORT || "587"),
-      secure: false,
-      auth: {
-        user: process.env.SMTP_USER,
-        pass: process.env.SMTP_PASS,
-      },
-    })
-  }
+    service: "gmail",
+    auth: {
+      user: process.env.EMAIL_USER,
+      pass: process.env.EMAIL_PASS,
+    },
+  });
+ }
 
   async sendEmail(options: EmailOptions): Promise<void> {
     try {
