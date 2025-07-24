@@ -34,10 +34,10 @@ export const submitMessage = async (req: Request, res: Response, next: NextFunct
     // Track analytics
     await analyticsService.trackMessageSubmission()
 
-    // Send email notification (don't wait for it)
-    emailService.sendNewMessageNotification(sanitizedContent).catch((error) => {
-      logger.error("Failed to send email notification:", error)
-    })
+    // Send email notification
+    if (sanitizedContent) {
+await emailService.sendNewMessageNotification(sanitizedContent)
+    }
 
     logger.info("New message submitted:", { messageId: message.id, length: message.messageLength })
 
