@@ -14,7 +14,7 @@ export const submitMessage = async (req: Request, res: Response, next: NextFunct
     // Sanitize the content
     const sanitizedContent = sanitizeMarkdown(content)
 
-    if (!sanitizedContent || sanitizedContent.length < 10) {
+    if (!sanitizedContent) {
       res.status(400).json({
         success: false,
         message: "Message content is too short after sanitization",
