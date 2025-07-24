@@ -20,6 +20,9 @@ import analyticsRoutes from "./routes/analytics"
 // Load environment variables
 dotenv.config()
 
+
+app.set('trust proxy', true);
+
 // Validate required environment variables
 const requiredEnvVars = ["MONGODB_URI", "JWT_SECRET", "ADMIN_EMAIL", "ADMIN_PASSWORD"]
 
