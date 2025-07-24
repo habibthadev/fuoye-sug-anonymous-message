@@ -37,8 +37,6 @@ const PORT = process.env.PORT || 5000
 // Connect to database
 connectDB()
 
-app.set('trust proxy', true);
-
 // Security middleware
 app.use(
   helmet({
